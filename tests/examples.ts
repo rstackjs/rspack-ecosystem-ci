@@ -12,6 +12,7 @@ export async function test(options: RunOptions) {
 			'build:rsbuild',
 			'build:rsdoctor',
 			'build:rspress',
+			'build:rslib',
 		],
 	})
 }
