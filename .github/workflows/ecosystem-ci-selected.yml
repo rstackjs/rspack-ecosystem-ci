@@ -39,6 +39,7 @@ on:
           # - nx
           - rspress
           - rsbuild
+          - rsbuild-rsc-plugin
           - rslib
           - rstest
           - rsdoctor
@@ -127,6 +128,8 @@ jobs:
           - suite: rstest
             os: ubuntu-22.04
           - suite: rsbuild
+            os: ubuntu-22.04
+          - suite: rsbuild-rsc-plugin
             os: ubuntu-22.04
           - suite: rsdoctor
             os: ubuntu-22.04
