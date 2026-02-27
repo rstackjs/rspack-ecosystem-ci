@@ -16,7 +16,7 @@ inputs:
   node-version:
     description: 'The version of Node.js to set up'
     required: true
-    default: '18'
+    default: '22'
 outputs:
   artifact-name:
     description: 'The name of the uploaded artifact'
