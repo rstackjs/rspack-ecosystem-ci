@@ -11,14 +11,6 @@
 			"directory": "packages/rspack"
 		},
 		{
-			"name": "@rspack/dev-server",
-			"directory": "packages/rspack-dev-server"
-		},
-		{
-			"name": "@rspack/tracing",
-			"directory": "packages/rspack-tracing"
-		},
-		{
 			"name": "@rspack/test-tools",
 			"directory": "packages/rspack-test-tools"
 		}
