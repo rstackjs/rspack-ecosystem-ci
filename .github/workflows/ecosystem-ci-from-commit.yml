@@ -30,6 +30,7 @@ on:
           - rslib
           - rstest
           - rsbuild
+          - rsbuild-rsc-plugin
           - examples
           - devserver
           - plugin
@@ -105,6 +106,8 @@ jobs:
           - suite: rstest
             os: ubuntu-22.04
           - suite: rsbuild
+            os: ubuntu-22.04
+          - suite: rsbuild-rsc-plugin
             os: ubuntu-22.04
           - suite: examples
             os: ubuntu-22.04
