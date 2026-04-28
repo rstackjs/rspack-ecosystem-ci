@@ -142,8 +142,7 @@ async function fetchJobs() {
 			...(process.env.GITHUB_TOKEN
 				? {
 						Authorization: `token ${process.env.GITHUB_TOKEN}`,
-						// eslint-disable-next-line no-mixed-spaces-and-tabs
-				  }
+					}
 				: undefined),
 		},
 	})
