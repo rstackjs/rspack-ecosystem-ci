@@ -9,7 +9,6 @@ import {
 	RunOptions,
 	Task,
 } from './types'
-//eslint-disable-next-line n/no-unpublished-import
 import { detect, AGENTS, Agent, getCommand } from '@antfu/ni'
 import actionsCore from '@actions/core'
 import assert from 'assert'
@@ -115,10 +114,6 @@ function initWorkspace(workspace: string) {
 	if (!fs.existsSync(workspace)) {
 		fs.mkdirSync(workspace, { recursive: true })
 	}
-	const eslintrc = path.join(workspace, '.eslintrc.json')
-	if (!fs.existsSync(eslintrc)) {
-		fs.writeFileSync(eslintrc, '{"root":true}\n', 'utf-8')
-	}
 	const editorconfig = path.join(workspace, '.editorconfig')
 	if (!fs.existsSync(editorconfig)) {
 		fs.writeFileSync(editorconfig, 'root = true\n', 'utf-8')
@@ -133,7 +128,8 @@ export async function setupRepo(options: RepoOptions) {
 		options.shallow = true
 	}
 
-	let { repo, commit, branch, tag, dir, shallow } = options
+	let { repo } = options
+	const { commit, branch, tag, dir, shallow } = options
 	if (!dir) {
 		throw new Error('setupRepo must be called with options.dir')
 	}
@@ -465,8 +461,7 @@ async function applyPackageOverrides(
 	// remove boolean flags
 	overrides = Object.fromEntries(
 		Object.entries(overrides)
-			//eslint-disable-next-line @typescript-eslint/no-unused-vars
-			.filter(([key, value]) => typeof value === 'string')
+			.filter(([, value]) => typeof value === 'string')
 			.map(([key, value]) => [key, useFileProtocol(value as string)]),
 	)
 	await $`git clean -fdxq` // remove current install
