@@ -54,6 +54,8 @@ jobs:
             os: ubuntu-22.04
           - suite: lynx-stack
             os: ubuntu-22.04
+          - suite: affine
+            os: ubuntu-22.04
       fail-fast: false
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.suite }}
@@ -69,7 +71,7 @@ jobs:
         if: matrix.suite == '_selftest'
         run: pnpm lint
       - name: Setup Node.js
-        if: matrix.suite == 'lynx-stack' || matrix.suite == '_selftest'
+        if: matrix.suite == 'lynx-stack' || matrix.suite == '_selftest' || matrix.suite == 'affine'
         uses: actions/setup-node@v4
         with:
           node-version: 22
