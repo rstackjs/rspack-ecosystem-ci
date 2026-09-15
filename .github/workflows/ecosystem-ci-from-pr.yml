@@ -39,6 +39,7 @@ on:
           - examples
           - devserver
           - plugin
+          - extension-js
       suiteRefType:
         description: "type of suite ref to use"
         required: true
